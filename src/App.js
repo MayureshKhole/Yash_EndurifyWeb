@@ -42,7 +42,7 @@ function App() {
         <Body>
           <HeroSection />
           <Wrapper>
-            <Skills />
+          
             <Experience />
           </Wrapper>
           <Projects />
