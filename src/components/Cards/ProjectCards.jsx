@@ -146,6 +146,10 @@ const ProjectCards = ({ project, setOpenModal }) => {
     const handlemouseoff=()=>{
         setHoverStyle({});
     }
+    const handlehref=()=>{
+        window.location.href = project.github;
+    }
+    
 
     return (
         <Card onClick={() => setOpenModal({ state: true, project: project })}
@@ -153,22 +157,22 @@ const ProjectCards = ({ project, setOpenModal }) => {
             onMouseLeave={handlemouseoff}
             style={hover}
         >
-            <Image src={project.image} />
+            <Image src={project.image}  onClick={handlehref}/>
             <Tags>
                 {project.tags?.map((tag, index) => (
                     <Tag>{tag}</Tag>
                 ))}
             </Tags>
-            <Details>
+            <Details onClick={handlehref}>
                 <Title>{project.title}</Title>
                 <Date>{project.date}</Date>
                 <Description>{project.description}</Description>
             </Details>
-            <Members>
+            {/* <Members>
                 {project.member?.map((member) => (
                     <Avatar src={member.img} />
                 ))}
-            </Members>
+            </Members> */}
             {/* <Button>View Project</Button> */}
         </Card>
     )

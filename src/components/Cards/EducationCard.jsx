@@ -25,10 +25,10 @@ const Description = styled.div`
 `
 
 const Span = styled.span`
-overflow: hidden;
+overflow: visible;
 display: -webkit-box;
 max-width: 100%;
--webkit-line-clamp: 4;
+-webkit-line-clamp: unset;
 -webkit-box-orient: vertical;
 text-overflow: ellipsis;
 `
@@ -71,6 +71,7 @@ const Top = styled.div`
     width: 100%;
     display: flex;
     gap: 12px
+    padding-top:3rem;
 `
 
 const Image = styled.img`

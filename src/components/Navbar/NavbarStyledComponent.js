@@ -6,6 +6,7 @@ export const Nav = styled.div`
     background-color: ${({theme}) => theme.card_light};
     height: 80px;
     display: flex;
+    background-color:#FFC470;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
@@ -128,6 +129,7 @@ export const ToggleButton = styled.button`
 export const ButtonContainer = styled.div`
   width: 80%;  
   height: 100%;
+  gap:2rem;
   display: flex;
   justify-content: end;
   align-items: center;
