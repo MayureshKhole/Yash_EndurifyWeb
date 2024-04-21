@@ -60,10 +60,10 @@ const ContactForm = styled.form`
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.card};
+  // background-color: ${({ theme }) => theme.card};
   padding: 32px;
   border-radius: 16px;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  // box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
   margin-top: 28px;
   gap: 12px;
 `
@@ -84,10 +84,16 @@ const ContactInput = styled.input`
   color: ${({ theme }) => theme.text_primary};
   border-radius: 12px;
   padding: 12px 16px;
+
   &:focus {
     border: 1px solid ${({ theme }) => theme.primary};
   }
-`
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    font-size: 16px;
+  }
+`;
 
 const ContactInputMessage = styled.textarea`
   flex: 1;
@@ -98,10 +104,46 @@ const ContactInputMessage = styled.textarea`
   color: ${({ theme }) => theme.text_primary};
   border-radius: 12px;
   padding: 12px 16px;
+
   &:focus {
     border: 1px solid ${({ theme }) => theme.primary};
   }
-`
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    font-size: 16px;
+  }
+`;
+
+const GifContainer = styled.div`
+  width: 50%; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 960px) {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+
+const Per = styled.div`
+  display: flex;
+  gap: 6rem;
+  background-color: none;
+  border-radius: 3rem;
+  width: 80rem;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    gap: 1rem; /* Reduce gap on smaller screens */
+  }
+`;
+
 
 const ContactButton = styled.input`
   width: 100%;
@@ -146,21 +188,27 @@ const Contact = () => {
       <Wrapper>
         <Title>Contact</Title>
         <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
-        <ContactForm ref={form} onSubmit={handleSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <ContactButton type="submit" value="Send" />
-        </ContactForm>
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={()=>setOpen(false)}
-          message="Email sent successfully!"
-          severity="success"
-        />
+        <Per>
+          <GifContainer>
+            <img src="https://www.sfu.ca/siat/student_projects/iat339/jdel/P2_NootNoot/public_html/Gifs/contactUsAnimation/mail-640px.gif" alt="Contact us" />
+          </GifContainer>
+          <ContactForm ref={form} onSubmit={handleSubmit}>
+            <ContactTitle>Email Me 🚀</ContactTitle>
+            <ContactInput placeholder="Your Email" name="from_email" />
+            <ContactInput placeholder="Your Name" name="from_name" />
+            <ContactInput placeholder="Subject" name="subject" />
+            <ContactInputMessage placeholder="Message" rows="4" name="message" />
+            <ContactButton type="submit" value="Send" />
+          </ContactForm>
+          <Snackbar
+            open={open}
+            autoHideDuration={6000}
+            onClose={() => setOpen(false)}
+            message="Email sent successfully!"
+            severity="success"
+          />
+
+        </Per>
       </Wrapper>
     </Container>
   )

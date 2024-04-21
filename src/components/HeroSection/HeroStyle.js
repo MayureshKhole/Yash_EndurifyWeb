@@ -2,7 +2,7 @@ import styled from "styled-components";
 import _default from "../../themes/default";
 
 export const HeroContainer = styled.div`
-  background: ${({ theme }) => theme.card_light};
+  background: #F9F9F9;
   display: flex;
   justify-content: center;
   position: relative;
@@ -75,7 +75,7 @@ export const HeroLeftContainer = styled.div`
 `;
 
 export const HeroRightContainer = styled.div`
-  width: 100%;
+  width: 120%;
   display: flex;
   order: 2;
   justify-content: end;
@@ -96,8 +96,9 @@ export const Img = styled.img`
   position: relative;
   width: 100%;
   height: 100%;
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 500px;
+  max-height: 1000px;
+  padding-left:3rem;
   border-radius: 10%;
   // border: 2px solid ${({ theme }) => theme.primary};
 
@@ -159,11 +160,13 @@ export const Span = styled.span`
   cursor: pointer;
 `;
 
+
 export const SubTitle = styled.div`
   font-size: 20px;
   line-height: 32px;
   margin-bottom: 42px;
   color: ${({ theme }) => theme.text_primary + 95};
+  text-align: justify; /* Add this line for text alignment */
 
   @media (max-width: 960px) {
     text-align: center;
@@ -174,38 +177,38 @@ export const SubTitle = styled.div`
     line-height: 32px;
   }
 `;
+export const HContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center; // Ensure items are aligned vertically in the center
+  justify-content: center; // Center the buttons horizontally
+`;
 
 export const ResumeButton = styled.a`
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-    width: 95%;
-    max-width: 300px;
-    text-align: center;
-    padding: 16px 0;
-    color:${({ theme }) => theme.white};
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 20px;
+  display: inline-block;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    color: ${({ theme }) => theme.white};
+    background-color: #ED9455;
+   
+    font-size: 18px;
     font-weight: 600;
-    transition: all 0.2s ease-in-out !important;
-    background: hsla(271, 100%, 50%, 1);
-    background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+  }
 
-    &:hover {
-        transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
-    filter: brightness(1);
-    }    
-    
-    
-    @media (max-width: 640px) {
-        padding: 12px 0;
-        font-size: 18px;
-    } 
-
+  @media (max-width: 640px) {
+    padding: 12px 0;
+    font-size: 18px;
+  }
 `;
+

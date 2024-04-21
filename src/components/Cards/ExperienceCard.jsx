@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Document = styled.img`
@@ -15,15 +15,25 @@ const Document = styled.img`
 
 const Description = styled.div`
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 15px;
     font-weight: 400;
-    display:none;
     color: ${({ theme }) => theme.text_primary + 99};
     margin-bottom: 10px;
     @media only screen and (max-width: 768px){
         font-size: 12px;
     }
-`
+`;
+
+const LeftContent = styled.div`
+    flex: 1;
+`;
+
+const RightContent = styled.div`
+    margin-left: 20px; /* Adjust as needed */
+`;
 
 const Span = styled.span`
 overflow: hidden;
@@ -35,7 +45,7 @@ text-overflow: ellipsis;
 `
 
 const Card = styled.div`
-    width: 650px;
+    width: 1000px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     padding: 12px 16px;
@@ -46,15 +56,7 @@ const Card = styled.div`
     flex-direction: column;
     gap: 12px;
     transition: all 0.3s ease-in-out;
-    &:hover{
-        box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
-        transform: translateY(-5px);
-        ${Description} {
-            display:block;
-            overflow: visible;
-            -webkit-line-clamp: unset;
-        }
-    }
+
     @media only screen and (max-width: 768px){
         padding: 10px;
         gap: 8px;
@@ -116,6 +118,7 @@ const Company = styled.div`
     }
 `
 
+
 const Date = styled.div`
     font-size: 12px;
     font-weight: 400;
@@ -149,10 +152,36 @@ const Skill = styled.div`
 `
 
 
+const ExpandIcon = styled.img`
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.7;
+    }
+`;
+
+const ExpandIconContainer = styled.div`
+    position: relative;
+    cursor: pointer;
+    &:hover ${ExpandIcon} {
+        opacity: 0.7;
+    }
+`;
 
 const ExperienceCard = ({ experience }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleOpen = () => setIsOpen(!isOpen);
+
     return (
         <Card>
+            <ExpandIconContainer onClick={toggleOpen}>
+                <ExpandIcon src={ isOpen ?"https://cdn0.iconfinder.com/data/icons/leading-international-corporate-website-app-collec/16/Collaps_accordion-512.png" : "https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png" }/>
+            </ExpandIconContainer>
             <Top>
                 <Image src={experience.img} />
                 <Body>
@@ -161,32 +190,45 @@ const ExperienceCard = ({ experience }) => {
                     <Date>{experience.date}</Date>
                 </Body>
             </Top>
-            <Description>
-                {experience?.desc &&
-                    <Span>{experience?.desc}</Span>
-
-                }
-                {experience?.skills &&
-                    <>
-                        <br />
-                        <Skills>
-                            <b>Skills:</b>
-                            <ItemWrapper>
-                                {experience?.skills?.map((skill, index) => (
-                                    <Skill>• {skill}</Skill>
-                                ))}
-                            </ItemWrapper>
-                        </Skills>
-                    </>
-                }
+            {isOpen && (
+                <Description>
+                <LeftContent>
+                    {experience?.desc && Array.isArray(experience.desc) && (
+                        <>
+                            {experience.desc.map((des, index) => (
+                                <ItemWrapper key={index}>
+                                    <Span>• {des}</Span>
+                                </ItemWrapper>
+                            ))}
+                        </>
+                    )}
+                    {experience?.skills && (
+                        <>
+                            <br />
+                            <Skills>
+                                <b>Skills:</b>
+                                <ItemWrapper>
+                                    {experience.skills.map((skill, index) => (
+                                        <Skill key={index}>• {skill}</Skill>
+                                    ))}
+                                </ItemWrapper>
+                            </Skills>
+                        </>
+                    )}
+                </LeftContent>
+                <RightContent>
+                    {/* Your new image */}
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUS3Y6PoftYViYhIzipfPSx3ALHAJ1DI5LlG86gqWiJw&s" alt="New Image" />
+                </RightContent>
             </Description>
-            {experience.doc &&
-                <a href={experience.doc} target="new">
+            )}
+            {experience.doc && (
+                <a href={experience.doc} target="_blank" rel="noopener noreferrer">
                     <Document src={experience.doc} />
                 </a>
-            }
+            )}
         </Card>
-    )
+    );
 }
 
-export default ExperienceCard
+export default ExperienceCard;
