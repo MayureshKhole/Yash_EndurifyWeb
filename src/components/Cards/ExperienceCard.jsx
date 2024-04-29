@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Chip from '@mui/material/Chip';
+import '../../App.css'
 
 const Document = styled.img`
     display: none;
@@ -15,6 +17,7 @@ const Document = styled.img`
 
 const Description = styled.div`
     width: 100%;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,6 +27,7 @@ const Description = styled.div`
     margin-bottom: 10px;
     @media only screen and (max-width: 768px){
         font-size: 12px;
+        
     }
 `;
 
@@ -33,6 +37,9 @@ const LeftContent = styled.div`
 
 const RightContent = styled.div`
     margin-left: 20px; /* Adjust as needed */
+    @media only screen and (max-width: 768px){
+        display:none;
+    }
 `;
 
 const Span = styled.span`
@@ -60,7 +67,7 @@ const Card = styled.div`
     @media only screen and (max-width: 768px){
         padding: 10px;
         gap: 8px;
-        width: 300px;
+        width: 315px;
     }
 
     &:hover ${Document}{
@@ -89,7 +96,9 @@ const Image = styled.img`
     border-radius: 10px;
     margin-top: 4px;
     @media only screen and (max-width: 768px){
-        height: 40px;
+        height: 30px;
+        width:25px;
+
     }
 `
 
@@ -162,6 +171,12 @@ const ExpandIcon = styled.img`
     &:hover {
         opacity: 0.7;
     }
+
+    @media only screen and (max-width: 768px){
+        width:20px;
+        height:20px;
+
+    }
 `;
 
 const ExpandIconContainer = styled.div`
@@ -170,6 +185,8 @@ const ExpandIconContainer = styled.div`
     &:hover ${ExpandIcon} {
         opacity: 0.7;
     }
+
+   
 `;
 
 const ExperienceCard = ({ experience }) => {
@@ -180,7 +197,7 @@ const ExperienceCard = ({ experience }) => {
     return (
         <Card>
             <ExpandIconContainer onClick={toggleOpen}>
-                <ExpandIcon src={ isOpen ?"https://cdn0.iconfinder.com/data/icons/leading-international-corporate-website-app-collec/16/Collaps_accordion-512.png" : "https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png" }/>
+                <ExpandIcon src={isOpen ? "https://cdn0.iconfinder.com/data/icons/leading-international-corporate-website-app-collec/16/Collaps_accordion-512.png" : "https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png"} />
             </ExpandIconContainer>
             <Top>
                 <Image src={experience.img} />
@@ -192,35 +209,36 @@ const ExperienceCard = ({ experience }) => {
             </Top>
             {isOpen && (
                 <Description>
-                <LeftContent>
-                    {experience?.desc && Array.isArray(experience.desc) && (
-                        <>
-                            {experience.desc.map((des, index) => (
-                                <ItemWrapper key={index}>
-                                    <Span>• {des}</Span>
-                                </ItemWrapper>
-                            ))}
-                        </>
-                    )}
-                    {experience?.skills && (
-                        <>
-                            <br />
-                            <Skills>
-                                <b>Skills:</b>
-                                <ItemWrapper>
-                                    {experience.skills.map((skill, index) => (
-                                        <Skill key={index}>• {skill}</Skill>
-                                    ))}
-                                </ItemWrapper>
-                            </Skills>
-                        </>
-                    )}
-                </LeftContent>
-                <RightContent>
-                    {/* Your new image */}
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUS3Y6PoftYViYhIzipfPSx3ALHAJ1DI5LlG86gqWiJw&s" alt="New Image" />
-                </RightContent>
-            </Description>
+                    <LeftContent>
+                        {experience?.desc && Array.isArray(experience.desc) && (
+                            <>
+                                {experience.desc.map((des, index) => (
+                                    <ItemWrapper key={index}>
+                                        <Span>• {des}</Span>
+                                    </ItemWrapper>
+                                ))}
+                            </>
+                        )}
+                        {experience?.skills && (
+                            <>
+                                <br />
+                                <Skills>
+                                    <b>Skills:</b>
+                                    <ItemWrapper>
+                                        {experience.skills.map((skill, index) => (
+                                            <Chip key={index} label={skill} 
+                                            style={{ backgroundColor: '#FFC470', color: 'black' }} />
+                                        ))}
+                                    </ItemWrapper>
+                                </Skills>
+                            </>
+                        )}
+                    </LeftContent>
+                    <RightContent>
+                        {/* Your new image */}
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUS3Y6PoftYViYhIzipfPSx3ALHAJ1DI5LlG86gqWiJw&s" alt="New Image" />
+                    </RightContent>
+                </Description>
             )}
             {experience.doc && (
                 <a href={experience.doc} target="_blank" rel="noopener noreferrer">

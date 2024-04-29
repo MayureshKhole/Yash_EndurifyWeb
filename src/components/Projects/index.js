@@ -32,7 +32,7 @@ const Projects = ({openModal,setOpenModal}) => {
             :
             <ToggleButton value="android app" onClick={() => setToggle('android app')}>React Native APP'S</ToggleButton>
           }
-          <Divider />
+        
         </ToggleButtonGroup>
         <CardContainer>
           {toggle === 'all' && projects

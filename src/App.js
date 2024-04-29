@@ -10,9 +10,11 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Blogs from './components/Blogs/Blogs'
 import Experience from './components/Experience';
 import Education from './components/Education';
 import ProjectDetails from './components/ProjectDetails';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'; // Import the ScrollToTop component
 import styled from 'styled-components';
 
 const Body = styled.div`
@@ -48,10 +50,13 @@ function App() {
           <Projects />
           <Wrapper>
             <Education />
+            {/* <Blogs/> */}
             <Contact />
           </Wrapper>
           <Footer />
           {openModal.state && <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />}
+          <ScrollToTop /> {/* Add the ScrollToTop component here */}
+  
         </Body>
       </Router>
     </ThemeProvider>
@@ -59,8 +64,3 @@ function App() {
 }
 
 export default App;
-
-
-
-// const [darkMode, setDarkMode] = useState(true);
-// const [openModal, setOpenModal] = useState({ state: false, project: null });

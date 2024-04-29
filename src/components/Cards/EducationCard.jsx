@@ -87,7 +87,8 @@ const Image = styled.img`
 const Body = styled.div`
     width: 100%;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    padding-left:1rem;
 `
 
 

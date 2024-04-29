@@ -2,7 +2,6 @@ import styled from "styled-components";
 import _default from "../../themes/default";
 
 export const HeroContainer = styled.div`
-  background: #F9F9F9;
   display: flex;
   justify-content: center;
   position: relative;
@@ -175,12 +174,17 @@ export const SubTitle = styled.div`
   @media (max-width: 640px) {
     font-size: 16px;
     line-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
   }
 `;
 export const HContainer = styled.div`
   display: flex;
-  gap: 2rem;
-  padding: 2rem;
+  gap: 1rem;
+  padding: 1rem;
   align-items: center; // Ensure items are aligned vertically in the center
   justify-content: center; // Center the buttons horizontally
 `;
