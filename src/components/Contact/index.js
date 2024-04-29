@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Snackbar } from '@mui/material';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
+import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
 
 const Container = styled.div`
 display: flex;
@@ -97,6 +100,7 @@ const ContactInput = styled.input`
 
 const ContactInputMessage = styled.textarea`
   flex: 1;
+  height:6rem;
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.text_secondary};
   outline: none;
@@ -118,6 +122,7 @@ const ContactInputMessage = styled.textarea`
 const GifContainer = styled.div`
   width: 50%; /* Adjust as needed */
   display: flex;
+  margin-top:3rem;
   justify-content: center;
   align-items: center;
   @media (max-width: 960px) {
@@ -149,10 +154,7 @@ const ContactButton = styled.input`
   width: 100%;
   text-decoration: none;
   text-align: center;
-  background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+  background: #FFC470;
   padding: 13px 16px;
   margin-top: 2px;
   border-radius: 12px;
@@ -161,7 +163,50 @@ const ContactButton = styled.input`
   font-size: 18px;
   font-weight: 600;
 `
+const CCard = styled.div`
+  display: flex;
+  width:24.4rem;
+  height:10rem;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
+
+  @media (max-width: 768px) {
+    max-width: 100%;  // Allow the card to fill the container on small screens
+    padding: 10px;
+  }
+  
+  @media (min-width: 950px) and (max-width: 1200px) {
+    width: 20rem;  // Reduce width for medium screens
+    padding: 15px;  // Adjust padding if necessary
+  }
+
+`;
+
+const Mcard = styled.div`
+display:flex;
+gap: 3rem;
+padding: 20px;
+padding-right:4.2rem;
+
+@media (max-width: 960px) {
+  display: none;  // Hides the Mcard on smaller screens
+}
+`
+
+const Tit = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+`;
+
+const Description = styled.div`
+  font-size: 16px;
+  color: ${({ theme }) => theme.text_secondary};
+`;
 
 
 const Contact = () => {
@@ -184,21 +229,42 @@ const Contact = () => {
 
 
   return (
-    <Container>
+    <Container id="contact">
       <Wrapper>
         <Title>Contact</Title>
         <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
+        <Mcard>
+
+          <CCard>
+            <PhoneIcon style={{ fontSize: 36, color: '#FFC470' }} />
+            <Tit>Contact Phone Number</Tit>
+            <Description>+91 9561342753</Description>
+          </CCard>
+
+          <CCard>
+            <EmailRoundedIcon style={{ fontSize: 36, color: '#FFC470' }} />
+            <Tit>My Email Address</Tit>
+            <Description>mbkhole@gmail.com</Description>
+          </CCard>
+          
+          <CCard>
+            <LocationOnRoundedIcon style={{ fontSize: 36, color: '#FFC470' }} />
+            <Tit>My Location</Tit>
+            <Description>Shivneri Colony , Pimple Gurav, Pune</Description>
+          </CCard>
+
+          
+        </Mcard>
         <Per>
           <GifContainer>
-            <img src="https://www.sfu.ca/siat/student_projects/iat339/jdel/P2_NootNoot/public_html/Gifs/contactUsAnimation/mail-640px.gif" alt="Contact us" />
+            <img src="https://i.pinimg.com/originals/cd/59/d6/cd59d626dc86397fe45080e6e9c7027d.gif" alt="Contact us" />
           </GifContainer>
           <ContactForm ref={form} onSubmit={handleSubmit}>
-            <ContactTitle>Email Me 🚀</ContactTitle>
             <ContactInput placeholder="Your Email" name="from_email" />
             <ContactInput placeholder="Your Name" name="from_name" />
             <ContactInput placeholder="Subject" name="subject" />
-            <ContactInputMessage placeholder="Message" rows="4" name="message" />
-            <ContactButton type="submit" value="Send" />
+            <ContactInputMessage placeholder="Message" rows="2" name="message" />
+            <ContactButton type="submit" value="Send Email" />
           </ContactForm>
           <Snackbar
             open={open}

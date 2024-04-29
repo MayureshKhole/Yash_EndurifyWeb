@@ -6,14 +6,14 @@ export const Bio = {
     "Programmer",
   ],
   description:
-    "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
+"I am a passionate MERN (MongoDB, Express.js, React.js, Node.js) stack developer, crafting dynamic and scalable web applications. With expertise in MongoDB for flexible data management, Express.js for robust backend APIs, React.js for interactive UIs, and Node.js for efficient server-side logic, I deliver end-to-end solutions tailored to client needs. Committed to continuous learning and Agile methodologies, I ensure projects are delivered on time and exceed expectations.",
   github: "https://github.com/MayureshKhole",
   resume:
     "https://drive.google.com/file/d/1eDZcHv6m4B0V-Ps8118VQdL36jU2ye7f/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/mayuresh-khole/",
   twitter: "https://twitter.com/mayuresh-khole/",
   insta: "https://www.instagram.com/mayuresh-khole/",
-  facebook: "https://www.facebook.com/mayuresh-khole/",
+  facebook: "https://www.facebook.com/mayuresh.khole.94",
 };
 
 export const skills = [
@@ -30,12 +30,6 @@ export const skills = [
         image:
           "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg",
       },
-      {
-        name: "Redux Thunk",
-        image:
-          "https://d2ooyrflu7lhqd.cloudfront.net/redux_thunk_c21f5edd27.png",
-      },
-
       {
         name: "HTML",
         image: "https://www.w3.org/html/logo/badge/html5-badge-h-solo.png",
@@ -116,6 +110,18 @@ export const skills = [
         image:
           "https://banner2.cleanpng.com/20180317/hvw/kisspng-linux-distribution-logo-ubuntu-unix-cliparts-5aacefab8a6412.7957358015212829875669.jpg",
       },
+      {
+        name :"SEO",
+        image:"https://www.creativefabrica.com/wp-content/uploads/2022/06/16/SEO-multicolor-logo-with-a-magnifying-g-Graphics-32464171-1-1-580x387.jpg"
+      },
+      {
+        name :"UI/UX",
+        image:"https://uiuxassets.com/media/site/d47f7ac79a-1631092114/icon-512x512.png" 
+      },
+      {
+        name : "CAD",
+        image:"https://static.vecteezy.com/system/resources/previews/019/847/657/non_2x/cad-letter-logo-design-on-white-background-cad-creative-initials-letter-logo-concept-cad-letter-design-vector.jpg"
+      }
 
     ],
   },
@@ -202,7 +208,7 @@ export const experiences = [
 
   {
     id: 3,
-    img: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHxXQdXyIVth4Dmpy3l7zDsgDrE7UU3BdCn8GjJcLM_A&s",
     role: "Mechanical Design Engineer",
     company: "VARDHISHNU TECHNOLOGIES PRIVATE LIMITED ",
     date: "Aug 2020 - Apr 2022",
@@ -235,25 +241,26 @@ export const experiences = [
 ];
 export const education = [
   {
-    id: 0,
-    img: "https://media.licdn.com/dms/image/C4E0BAQEFsIyAZyuMwA/company-logo_200_200/0/1631345386058?e=1721260800&v=beta&t=fb2mkYsX82VtiF9bnPFZ9ftgqIXxPRHzciMQIyD1ko8",
-    school: "Savitribai Phule Pune University",
-    date: "2014 - 2019",
-    grade: "First Class",
-    desc: "I completed my Bachelor of Engineering in Mechanical Engineering at Savitribai Phule Pune University from 2014 to 2019. Throughout this period, I actively engaged in coursework, projects, and practical experiences, equipping myself with the necessary skills and knowledge for a successful career in the field.",
-    degree: "Mechanical Engineering",
-  },
-  {
     id: 1,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh2yvrqou_fhZFsCgW-A-_j5-v_csvSGWR-Ek7UHTR6g&s",
-    school: "Maharashtra State Board of Technical Education",
+    school: "Diploma in Mechanical Engineering",
     date: "2009-2012",
     grade: "First Class",
     desc:
       "From 2009 to 2012, I pursued a Diploma in Mechanical Engineering at Maharashtra Board of Technical Education. During this time, I maintained a First Class grade, indicating a strong grasp of the fundamentals of mechanical engineering. Through practical training and theoretical coursework, I acquired essential skills and knowledge in areas such as thermodynamics, fluid mechanics, and machine design. This diploma provided me with a solid foundation upon which to build my career in mechanical engineering.",
-    degree: "Diploma in Mechanical Engineering",
+    degree: "Maharashtra State Board of Technical Education",
   },
- 
+ ,
+  {
+    id: 0,
+    img: "https://media.licdn.com/dms/image/C4E0BAQEFsIyAZyuMwA/company-logo_200_200/0/1631345386058?e=1721260800&v=beta&t=fb2mkYsX82VtiF9bnPFZ9ftgqIXxPRHzciMQIyD1ko8",
+    school: " B.Tech in Mechanical Engineering",
+    date: "2014 - 2019",
+    grade: "First Class",
+    desc: "I completed my Bachelor of Engineering in Mechanical Engineering at Savitribai Phule Pune University from 2014 to 2019. Throughout this period, I actively engaged in coursework, projects, and practical experiences, equipping myself with the necessary skills and knowledge for a successful career in the field.",
+    degree: "Savitribai Phule Pune University",
+  },
+  
 ];
 
 export const projects = [

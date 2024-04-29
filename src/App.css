@@ -39,3 +39,9 @@ body{
   ::-webkit-scrollbar-thumb:hover {
     background: #626970;
   }
+
+  .chip{
+    background-color: '#FFC470';
+  }
+
+  
