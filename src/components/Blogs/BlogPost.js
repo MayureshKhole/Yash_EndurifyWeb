@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
+import Imgh from './img.jpeg'
 
 const theme = {
   text_primary: "#333",
@@ -76,7 +77,7 @@ const PostContent = styled.div`
 `;
 
 const PostImg = styled.img`
-  max-width: 100%;
+  width: 23rem;
   height: auto;
   padding: 2rem 0;
   border-radius: 8px;
@@ -102,7 +103,7 @@ const blogPosts = [
   ,
   {
     id: 3,
-    img: "https://pps.whatsapp.net/v/t61.24694-24/435736992_384296187258481_7177746467117206371_n.jpg?ccb=11-4&oh=01_Q5AaICKl8ZJVtxWTqRicSUeeX7rjFcad0MnBFRvd2vWvGTlh&oe=665EBA66&_nc_sid=e6ed6c&_nc_cat=104",
+    img: "https://i.imghippo.com/files/ZPMDG1717657206.jpg",
     title: "From Non-Tech to Tech: How I Became a MERN Stack Developer",
     content: `
   <h2><strong>Introduction</strong></h2>

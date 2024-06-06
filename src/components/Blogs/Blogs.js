@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
 import { CardContainer } from '../Projects/ProjectsStyle';
+import Imgh from './img.jpeg'
 
 const BlogContainer = styled.div`
   width: 100%;
@@ -83,7 +84,7 @@ function Blogs() {
   const posts = [
     { id: 1, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVLK4GOkJfK0-ekao6_m3qJCFbjgoE4yYTsrqWbBEnRh9o3vXQiCX70xVU2ivZ0-mOXEU&usqp=CAU", title: "Best Security Practices for Web Developers", summary: "Understand the critical importance of security in web development and the common threats" },
     { id: 2, img: "https://novatura.co/_astro/frame-3.R60pp0U9.png", title: "Enhancing User Experience with (PWAs)", summary: "Explore the features of PWAs, such as offline capabilities, push notifications, and home screen installation." },
-    { id: 3, img: "https://pps.whatsapp.net/v/t61.24694-24/435736992_384296187258481_7177746467117206371_n.jpg?ccb=11-4&oh=01_Q5AaICKl8ZJVtxWTqRicSUeeX7rjFcad0MnBFRvd2vWvGTlh&oe=665EBA66&_nc_sid=e6ed6c&_nc_cat=104", title: " My Journey from Non-tech to Tech", summary: "This journey, filled with continuous learning and real-world application, has been incredibly rewarding." },
+    { id: 3, img: "https://i.imghippo.com/files/ZPMDG1717657206.jpg", title: " My Journey from Non-tech to Tech", summary: "This journey, filled with continuous learning and real-world application, has been incredibly rewarding." },
 
     { id: 4, img: "https://www.urvam.com/storage/blog/829778941702012364.png", title: "Optimizing Website Performance", summary: "Techniques for optimizing website speed and scalability, including image compression, (CDNs), caching strategies, and server-side optimizations." },
     { id: 5, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjSSu3uLW0lmdwU0CCudc5Vmz3T1hyH4hkCKn5oiCggA&s", title: "Responsive Web Design", summary: "Discover the principles and techniques behind responsive web design, including fluid grids, flexible images, and media queries. " },

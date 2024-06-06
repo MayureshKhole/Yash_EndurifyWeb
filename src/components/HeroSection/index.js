@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import Imgh from "./img.jpeg"
 
 import HeroBgAnimation from "../HeroBgAnimation";
 import {
@@ -14,12 +14,8 @@ import {
   Title,
   Span,
   SubTitle,
-  SocialMediaIcons,
-  SocialMediaIcon,
-  ResumeButton,
   HContainer,
 } from "./HeroStyle";
-import HeroImg from "../../images/HeroImage.jpeg";
 import Typewriter from "typewriter-effect";
 import { Bio } from "../../data/constants";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -29,6 +25,7 @@ import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import GitHub from "@mui/icons-material/GitHub";
 import "./index.css";
+import { ImagesearchRollerOutlined } from "@mui/icons-material";
 
 const HeroSection = () => {
   const SocialMediaIcons = styled.div`
@@ -125,7 +122,7 @@ const HeroSection = () => {
           </HeroLeftContainer>
 
           <HeroRightContainer id="Right">
-            <Img src="https://pps.whatsapp.net/v/t61.24694-24/435736992_384296187258481_7177746467117206371_n.jpg?ccb=11-4&oh=01_Q5AaICKl8ZJVtxWTqRicSUeeX7rjFcad0MnBFRvd2vWvGTlh&oe=665EBA66&_nc_sid=e6ed6c&_nc_cat=104" />
+            <Img src={Imgh} />
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
