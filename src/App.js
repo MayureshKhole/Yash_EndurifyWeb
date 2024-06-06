@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './utils/Themes';
 import Navbar from './components/Navbar';
 import './App.css';
-import { BrowserRouter as Router } from 'react-router-dom';
 import HeroSection from './components/HeroSection';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Blogs from './components/Blogs/Blogs';
+import BlogPost from './components/Blogs/BlogPost';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Blogs from './components/Blogs/Blogs'
 import Experience from './components/Experience';
 import Education from './components/Education';
 import ProjectDetails from './components/ProjectDetails';
@@ -40,11 +41,11 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Router>
-        <Navbar toggleTheme={toggleTheme} darkMode={darkMode} />
+      <Navbar toggleTheme={toggleTheme} darkMode={darkMode} />
         <Body>
           <HeroSection />
           <Wrapper>
-          
+            <Skills />
             <Experience />
           </Wrapper>
           <Projects />
@@ -64,3 +65,4 @@ function App() {
 }
 
 export default App;
+

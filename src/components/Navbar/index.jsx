@@ -8,13 +8,12 @@ import { useTheme } from 'styled-components';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import './index.css'
 
-
 const Navbar = ({ toggleTheme, darkMode }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const theme = useTheme();
 
   const handleClick = () => {
-    toggleTheme(); // Assuming toggleTheme function toggles the theme
+    toggleTheme(); 
   };
 
   function MayureshKhole() {
@@ -38,7 +37,7 @@ const Navbar = ({ toggleTheme, darkMode }) => {
           <NavLink href='#experience'>Experience</NavLink>
           <NavLink href='#projects'>Projects</NavLink>
           <NavLink href='#education'>Education</NavLink>
-          {/* <NavLink href='#blogs'>Blogs</NavLink> */}
+          <NavLink href='#blogs'>Blogs</NavLink>
         </NavItems>
         <ButtonContainer>
           <ToggleSwitch onClick={toggleTheme} darkMode={darkMode}>

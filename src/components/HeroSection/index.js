@@ -102,6 +102,8 @@ const HeroSection = () => {
                 href={Bio.resume}
                 target="display"
                 className="button-outline-primary"
+                style={{
+                  backgroundColor:"#FFC470",}}
               >
                 View Resume
               </Button>
@@ -110,6 +112,7 @@ const HeroSection = () => {
                   type="button"
                   className="button-outline-success"
                   style={{
+                    backgroundColor:"#FFC470",
                     padding: "2px",
                     border: "1px solid white",
                     outline: "1px solid white",
@@ -122,7 +125,7 @@ const HeroSection = () => {
           </HeroLeftContainer>
 
           <HeroRightContainer id="Right">
-            <Img src="https://media.licdn.com/dms/image/D4D03AQGTL1CcpvLOEw/profile-displayphoto-shrink_800_800/0/1671502448728?e=1718236800&v=beta&t=2viDAdITsDlP6gHR4KEEv_1Q0JuTQujhwo4jRB9EwoY" />
+            <Img src="https://pps.whatsapp.net/v/t61.24694-24/435736992_384296187258481_7177746467117206371_n.jpg?ccb=11-4&oh=01_Q5AaICKl8ZJVtxWTqRicSUeeX7rjFcad0MnBFRvd2vWvGTlh&oe=665EBA66&_nc_sid=e6ed6c&_nc_cat=104" />
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>

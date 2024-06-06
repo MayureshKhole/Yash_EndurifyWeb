@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import _default from '../../themes/default';
 
 export const Nav = styled.div`
-    background-color: ${({theme}) => theme.card_light};
     height: 60px;
     display: flex;
     background-color:#FFC470;
@@ -48,6 +47,7 @@ export const NavItems = styled.ul`
     width: 100%;
     display: flex;
     padding-top:1.1rem;
+    background-color: ##FFFF80;
     align-items: center;
     justify-content:center;
     gap: 32px;
@@ -66,7 +66,7 @@ export const NavLink = styled.a`
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     :hover {
-      color: ${({ theme }) => theme.primary};
+      color: #FFFF80;
     }
 
     &.active {
