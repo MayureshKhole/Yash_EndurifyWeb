@@ -203,7 +203,7 @@ export const ResumeButton = styled.a`
 
   &:hover {
     transform: scale(1.05);
-    color: ${({ theme }) => theme.white};
+    color: "#AD88C6";
     background-color: #ED9455;
    
     font-size: 18px;

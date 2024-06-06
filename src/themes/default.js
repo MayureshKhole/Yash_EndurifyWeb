@@ -6,12 +6,12 @@ export default {
   },
   // Colors for layout - Light Theme Adjustments
   colors: {
-    primary1: "#F9F9F9", // Keeping the primary color for brand consistency
-    tbgd:"#FFC470",
-    tbgl:"#FFC470",
-    background1: "#FFC470;", // Light background
-    button: "#854CE6", // Keeping the button color for brand consistency
-    background2: "#FFC470", // Lighter shade for secondary background
+    primary1: "#FFFF80", // Keeping the primary color for brand consistency
+    tbgd:"#FFFF80",
+    tbgl:"#FFFF80",
+    background1: "#FFFF80;", // Light background
+    button: "#FFC470", // Keeping the button color for brand consistency
+    background2: "#FFFF80", // Lighter shade for secondary background
     text: "#FFC470", // Darker text color for better readability
     text1: "#FFC470", // Even darker shade for primary text
     text2: "#FFC470", // Subdued text color for secondary text

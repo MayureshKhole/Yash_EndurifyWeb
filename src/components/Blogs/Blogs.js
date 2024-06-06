@@ -55,8 +55,8 @@ const BlogCard = styled.div`
 `;
 
 const PostImg = styled.img`
-  max-width: 100%;
-  height: auto;
+  max-width: 20rem;
+  height: 18rem;
   padding: 2rem;
 `;
 
@@ -81,13 +81,13 @@ const ReadMoreLink = styled(Link)`
 
 function Blogs() {
   const posts = [
-    { id: 1, img: "https://miro.medium.com/v2/resize:fit:1400/0*lW3KmU7rgbXBZCRx.png", title: "Understanding React Hooks", summary: "Dive deep into how React Hooks can make your components more readable and modular." },
-    { id: 2, img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQWRd2JwYqKCH4MP9zF8T4yBj2OLI54qi-4jDdSwuWTrP4Mj_5RrrcTB1u-Hup47jeyqdub6WEQsuOwVJxU1hGfd2tpv0JYo3H58dVV3JplACn4kFRegkVxl0awT9VvMvcqJc7TMl4si4lNTZEdLvL05z5WZ3BlhpmiB7EQA0ib9A2rPZKcHoOITGQ6Q/w640-h360/react%20css%20style.jpg", title: "Styling in React", summary: "Explore various ways to style React components using CSS-in-JS, CSS Modules, and more." },
-    { id: 1, img: "https://miro.medium.com/v2/resize:fit:1400/0*lW3KmU7rgbXBZCRx.png", title: "Understanding React Hooks", summary: "Dive deep into how React Hooks can make your components more readable and modular." },
+    { id: 1, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVLK4GOkJfK0-ekao6_m3qJCFbjgoE4yYTsrqWbBEnRh9o3vXQiCX70xVU2ivZ0-mOXEU&usqp=CAU", title: "Best Security Practices for Web Developers", summary: "Understand the critical importance of security in web development and the common threats" },
+    { id: 2, img: "https://novatura.co/_astro/frame-3.R60pp0U9.png", title: "Enhancing User Experience with (PWAs)", summary: "Explore the features of PWAs, such as offline capabilities, push notifications, and home screen installation." },
+    { id: 3, img: "https://pps.whatsapp.net/v/t61.24694-24/435736992_384296187258481_7177746467117206371_n.jpg?ccb=11-4&oh=01_Q5AaICKl8ZJVtxWTqRicSUeeX7rjFcad0MnBFRvd2vWvGTlh&oe=665EBA66&_nc_sid=e6ed6c&_nc_cat=104", title: " My Journey from Non-tech to Tech", summary: "This journey, filled with continuous learning and real-world application, has been incredibly rewarding." },
 
-    { id: 1, img: "https://tsh.io/wp-content/uploads/2020/10/react-hooks-best-practices-lead_.jpg", title: "Understanding React Hooks", summary: "Dive deep into how React Hooks can make your components more readable and modular." },
-    { id: 2, img: "https://innovance.com.tr/wp-content/uploads/2022/07/styling.png", title: "Styling in React", summary: "Explore various ways to style React components using CSS-in-JS, CSS Modules, and more." },
-    { id: 1, img: "https://miro.medium.com/v2/resize:fit:1166/1*bqtyARlwzJtp9XTWjM3quQ.png", title: "Understanding React Hooks", summary: "Dive deep into how React Hooks can make your components more readable and modular." },
+    { id: 4, img: "https://www.urvam.com/storage/blog/829778941702012364.png", title: "Optimizing Website Performance", summary: "Techniques for optimizing website speed and scalability, including image compression, (CDNs), caching strategies, and server-side optimizations." },
+    { id: 5, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjSSu3uLW0lmdwU0CCudc5Vmz3T1hyH4hkCKn5oiCggA&s", title: "Responsive Web Design", summary: "Discover the principles and techniques behind responsive web design, including fluid grids, flexible images, and media queries. " },
+    { id: 6, img: "https://iabac.org/blog/uploads/images/202309/image_870x_650ece21df858.jpg", title: "The Role of DevOps", summary: " DevOps include infrastructure as code (IaC), continuous integration/continuous delivery (CI/CD), automated testing, and monitoring." },
   ];
 
   return (
