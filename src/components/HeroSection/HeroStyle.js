@@ -172,21 +172,34 @@ export const SubTitle = styled.div`
   }
 
   @media (max-width: 640px) {
-    font-size: 16px;
-    line-height: 32px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit to 2 lines */
-    -webkit-box-orient: vertical;
+    display:none;
+  }  
+    
+  @media (max-width: 640px) {
+   &::before {
+      content: "I am a passionate MERN (MongoDB, Express.js, React.js, Node.js) stack developer";
+      font-size: 16px;
+      line-height: 32px;
+      color: ${({ theme }) => theme.text_primary + 95}; /* Text color */
+      text-align: center; /* Center alignment for mobile */
+      display: block;
+      z-index:-100;
   }
 `;
+
 export const HContainer = styled.div`
   display: flex;
   gap: 1rem;
   padding: 1rem;
   align-items: center; // Ensure items are aligned vertically in the center
   justify-content: center; // Center the buttons horizontally
+
+  @media (max-width: 640px) {
+  padding-top:2rem;
+    flex-direction: column; // Stack buttons vertically
+    gap: 2rem; // Adjust gap between buttons
+  }
+
 `;
 
 export const ResumeButton = styled.a`

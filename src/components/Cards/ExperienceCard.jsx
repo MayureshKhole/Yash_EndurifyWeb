@@ -53,7 +53,7 @@ text-overflow: ellipsis;
 
 const Card = styled.div`
     width: 1000px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     padding: 12px 16px;
     justify-content: space-between;
@@ -227,7 +227,7 @@ const ExperienceCard = ({ experience }) => {
                                     <ItemWrapper>
                                         {experience.skills.map((skill, index) => (
                                             <Chip key={index} label={skill} 
-                                            style={{ backgroundColor: '#FFC470', color: 'black' }} />
+                                            style={{ backgroundColor: '#FFC470', color: 'black', borderRadius:"5px" }} />
                                         ))}
                                     </ItemWrapper>
                                 </Skills>
