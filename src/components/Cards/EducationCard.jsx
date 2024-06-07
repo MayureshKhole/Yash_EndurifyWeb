@@ -35,7 +35,7 @@ text-overflow: ellipsis;
 
 const Card = styled.div`
     width: 650px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
     padding: 12px 16px;
     justify-content: space-between;
