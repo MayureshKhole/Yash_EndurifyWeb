@@ -43,18 +43,23 @@ function App() {
       <Router>
       <Navbar toggleTheme={toggleTheme} darkMode={darkMode} />
         <Body>
-          <HeroSection />
-          <Wrapper>
-            <Skills />
-            <Experience />
-          </Wrapper>
-          <Projects />
-          <Wrapper>
-            <Education />
-            <Blogs/>
-            <Contact />
-          </Wrapper>
-          <Footer />
+        <Routes>
+          <Route path="/" element={<>
+            <HeroSection />
+            <Wrapper>
+              <Skills />
+              <Experience />
+            </Wrapper>
+            <Projects />
+            <Wrapper>
+              <Education />
+              <Blogs />
+              <Contact />
+            </Wrapper>
+            <Footer />
+          </>} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+        </Routes>
           {openModal.state && <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />}
           <ScrollToTop /> {/* Add the ScrollToTop component here */}
   

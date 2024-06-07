@@ -197,7 +197,7 @@ const ExperienceCard = ({ experience }) => {
     return (
         <Card>
             <ExpandIconContainer onClick={toggleOpen}>
-                <ExpandIcon src={isOpen ? "https://cdn0.iconfinder.com/data/icons/leading-international-corporate-website-app-collec/16/Collaps_accordion-512.png" : "https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png"} />
+                <ExpandIcon src={isOpen ? "https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-up-01-512.png" : "https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-down-01-512.png"} />
             </ExpandIconContainer>
             <Top>
                 <Image src={experience.img} />

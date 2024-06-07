@@ -98,9 +98,7 @@ export const Img = styled.img`
   max-width: 500px;
   max-height: 1000px;
   padding-left:3rem;
-  border-radius: 10%;
-  // border: 2px solid ${({ theme }) => theme.primary};
-
+  border-radius:2rem;
   /* Add transition for smooth animation */
   transition: transform 0.3s ease;
 
