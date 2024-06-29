@@ -6,14 +6,14 @@ import Navbar from './components/Navbar';
 import './App.css';
 import HeroSection from './components/HeroSection';
 import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
+import Products from './components/Products';
+import AboutUs from './components/AboutUs';
 import Blogs from './components/Blogs/Blogs';
 import BlogPost from './components/Blogs/BlogPost';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Experience from './components/Experience';
-import Education from './components/Education';
+import Testimonials from './components/Testimonials';
+import Services from './components/Services';
 import ProjectDetails from './components/ProjectDetails';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'; // Import the ScrollToTop component
 import styled from 'styled-components';
@@ -47,12 +47,12 @@ function App() {
           <Route path="/" element={<>
             <HeroSection />
             <Wrapper>
-              <Skills />
-              <Experience />
+              <Products />
+              <Testimonials />
             </Wrapper>
-            <Projects />
+            <AboutUs />
             <Wrapper>
-              <Education />
+              <Services />
               <Blogs />
               <Contact />
             </Wrapper>

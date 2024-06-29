@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom"; // Assuming you're using React Router for navigation
-import { CardContainer } from "../Projects/ProjectsStyle";
+import { CardContainer } from "../AboutUs/ProjectsStyle";
 import Imgh from "./img.jpeg";
 
 const BlogContainer = styled.div`

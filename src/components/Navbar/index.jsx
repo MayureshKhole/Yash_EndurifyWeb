@@ -33,10 +33,10 @@ const Navbar = ({ toggleTheme, darkMode }) => {
           <FaBars onClick={() => setIsOpen(!isOpen)} />
         </MobileIcon>
         <NavItems>
-          <NavLink href='#skills'>Skills</NavLink>
-          <NavLink href='#experience'>Experience</NavLink>
-          <NavLink href='#projects'>Projects</NavLink>
-          <NavLink href='#education'>Education</NavLink>
+          <NavLink href='#products'>Products</NavLink>
+          <NavLink href='#testimonilas'>Testimonials</NavLink>
+          <NavLink href='#aboutus'>AboutUs</NavLink>
+          <NavLink href='#services'>Services</NavLink>
           <NavLink href='#blogs'>Blogs</NavLink>
         </NavItems>
         <ButtonContainer>
@@ -50,10 +50,10 @@ const Navbar = ({ toggleTheme, darkMode }) => {
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
             <MobileLink href="#about" onClick={() => setIsOpen(!isOpen)}>About</MobileLink>
-            <MobileLink href='#skills' onClick={() => setIsOpen(!isOpen)}>Skills</MobileLink>
-            <MobileLink href='#experience' onClick={() => setIsOpen(!isOpen)}>Experience</MobileLink>
-            <MobileLink href='#projects' onClick={() => setIsOpen(!isOpen)}>Projects</MobileLink>
-            <MobileLink href='#education' onClick={() => setIsOpen(!isOpen)}>Education</MobileLink>
+            <MobileLink href='#products' onClick={() => setIsOpen(!isOpen)}>Products</MobileLink>
+            <MobileLink href='#testimonials' onClick={() => setIsOpen(!isOpen)}>Testimonials</MobileLink>
+            <MobileLink href='#aboutus' onClick={() => setIsOpen(!isOpen)}>AboutUs</MobileLink>
+            <MobileLink href='#services' onClick={() => setIsOpen(!isOpen)}>Services</MobileLink>
             <MobileLink href='#blogs' onClick={() => setIsOpen(!isOpen)}>Blogs</MobileLink>
             {/* <GitHubButton style={{padding: '10px 16px',background: `${theme.primary}`, color: 'white',width: 'max-content'}} href={Bio.github} target="_blank">Github Profile</GitHubButton> */}
           </MobileMenu>
