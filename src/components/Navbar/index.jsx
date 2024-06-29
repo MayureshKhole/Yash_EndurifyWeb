@@ -16,7 +16,7 @@ const Navbar = ({ toggleTheme, darkMode }) => {
     toggleTheme(); 
   };
 
-  function MayureshKhole() {
+  function Endurify() {
     return <div>Endurify </div>;
   }
 
@@ -25,7 +25,7 @@ const Navbar = ({ toggleTheme, darkMode }) => {
       <NavbarContainer>
         <NavLogo to='/'>
           <a style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer' }}>
-            <Span><MayureshKhole /></Span>
+            <Span><Endurify /></Span>
           </a>
         </NavLogo>
         <MobileIcon>
@@ -34,7 +34,7 @@ const Navbar = ({ toggleTheme, darkMode }) => {
         </MobileIcon>
         <NavItems>
           <NavLink href='#products'>Products</NavLink>
-          <NavLink href='#testimonilas'>Testimonials</NavLink>
+          <NavLink href='#testimonials'>Testimonials</NavLink>
           <NavLink href='#aboutus'>AboutUs</NavLink>
           <NavLink href='#services'>Services</NavLink>
           <NavLink href='#blogs'>Blogs</NavLink>
@@ -49,7 +49,7 @@ const Navbar = ({ toggleTheme, darkMode }) => {
         </ButtonContainer>
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
-            <MobileLink href="#about" onClick={() => setIsOpen(!isOpen)}>About</MobileLink>
+            {/* <MobileLink href="#about" onClick={() => setIsOpen(!isOpen)}>About</MobileLink> */}
             <MobileLink href='#products' onClick={() => setIsOpen(!isOpen)}>Products</MobileLink>
             <MobileLink href='#testimonials' onClick={() => setIsOpen(!isOpen)}>Testimonials</MobileLink>
             <MobileLink href='#aboutus' onClick={() => setIsOpen(!isOpen)}>AboutUs</MobileLink>
