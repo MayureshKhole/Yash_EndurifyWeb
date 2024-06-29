@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { skills } from '../../data/constants';
+import { products } from '../../data/constants';
 
 const Container = styled.div`
     display: flex;
@@ -44,7 +44,7 @@ const Desc = styled.div`
     }
 `;
 
-const SkillsContainer = styled.div`
+const ProductsContainer = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -52,86 +52,82 @@ const SkillsContainer = styled.div`
     gap: 30px;
 `;
 
-const Skill = styled.div`
+const Product = styled.div`
     width: calc(33.33% - 30px);
     max-width: 350px;
     background: ${({ theme }) => theme.card};
     border: 0.1px solid #854ce6;
     box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
     border-radius: 5px;
-    padding: 18px 36px;
+    overflow: hidden;
+    padding: 0;
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @media (max-width: 768px) {
         width: calc(50% - 30px);
     }
     @media (max-width: 500px) {
         width: calc(100% - 30px);
-        padding: 18px;
     }
 `;
 
-const SkillTitle = styled.h2`
-    font-size: 28px;
+const ProductImage = styled.img`
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    @media (max-width: 768px) {
+        height: 180px;
+    }
+    @media (max-width: 500px) {
+        height: 150px;
+    }
+`;
+
+const ProductContent = styled.div`
+    padding: 18px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const ProductTitle = styled.h2`
+    font-size: 24px;
     font-weight: 600;
     color: ${({ theme }) => theme.text_secondary};
-    margin-bottom: 20px;
+    margin: 12px 0;
     text-align: center;
 `;
 
-const SkillList = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 20px;
-`;
-
-const SkillItem = styled.div`
+const ProductDescription = styled.div`
     font-size: 16px;
-    font-weight: 400;
     color: ${({ theme }) => theme.text_primary + 80};
-    border: 1px solid ${({ theme }) => theme.text_primary + 80};
-    border-radius: 5px;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    @media (max-width: 768px) {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
+    text-align: center;
 `;
 
-const SkillImage = styled.img`
-    width: 24px;
-    height: 24px;
-`;
-
-const Skills = () => {
+const Products = () => {
     return (
-        <Container id="skills">
+        <Container id="products">
             <Wrapper>
-                <Title>Products</Title>
+                <Title>Our Products</Title>
                 <Desc>
-                    Here are some of my skills on which I have been working on for the past 2 years.
+                    Explore the range of IT services and products we offer to cater to your business needs.
                 </Desc>
-                <SkillsContainer>
-                    {skills.map((skill) => (
-                        <Skill key={skill.title}>
-                            <SkillTitle>{skill.title}</SkillTitle>
-                            <SkillList>
-                                {skill.skills.map((item, index) => (
-                                    <SkillItem key={index}>
-                                        <SkillImage src={item.image} />
-                                        {item.name}
-                                    </SkillItem>
-                                ))}
-                            </SkillList>
-                        </Skill>
+                <ProductsContainer>
+                    {products.map((product) => (
+                        <Product key={product.title}>
+                            <ProductImage src={product.image} alt={product.title} />
+                            <ProductContent>
+                                <ProductTitle>{product.title}</ProductTitle>
+                                <ProductDescription>{product.description}</ProductDescription>
+                            </ProductContent>
+                        </Product>
                     ))}
-                </SkillsContainer>
+                </ProductsContainer>
             </Wrapper>
         </Container>
     );
 };
 
-export default Skills;
+export default Products;

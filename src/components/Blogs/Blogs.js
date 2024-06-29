@@ -1,7 +1,6 @@
+import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom"; // Assuming you're using React Router for navigation
-import { CardContainer } from "../AboutUs/ProjectsStyle";
-import Imgh from "./img.jpeg";
+import { Link } from "react-router-dom";
 
 const BlogContainer = styled.div`
   width: 100%;
@@ -15,7 +14,6 @@ const BlogWrapper = styled.section`
   max-width: 1200px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   align-items: center;
   padding: 1rem;
 `;
@@ -43,38 +41,53 @@ const Desc = styled.div`
   }
 `;
 
+const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+`;
+
 const BlogCard = styled.div`
-  width: 100%;
-  max-width: 800px;
+  width: 300px;
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-5px);
+  }
 `;
 
 const PostImg = styled.img`
-  max-width: 20rem;
-  height: 18rem;
-  padding: 2rem;
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
 `;
 
 const PostTitle = styled.h2`
   font-size: 20px;
-  color: black;
+  color: ${({ theme }) => theme.text_primary};
+  margin: 10px 0;
+  text-align: center;
 `;
 
 const PostSummary = styled.p`
   font-size: 16px;
   color: ${({ theme }) => theme.text_secondary};
+  text-align: center;
 `;
 
 const ReadMoreLink = styled(Link)`
   color: ${({ theme }) => theme.primary};
   text-decoration: none;
   font-weight: bold;
+  text-align: center;
   &:hover {
     text-decoration: underline;
   }
@@ -84,56 +97,42 @@ function Blogs() {
   const posts = [
     {
       id: 1,
-      img: "https://i.ytimg.com/vi/8VGoj8mrMnY/maxresdefault.jpg",
-      title: "Learning in public",
+      img: "https://example.com/image1.jpg",
+      title: "New Services Launch: Enhance Your IT Infrastructure",
       summary:
-        "Explore the concept of learning in public, sharing your knowledge, receiving feedback, and building a community.",
+        "Discover our latest services designed to boost your IT infrastructure's performance and security.",
     },
     {
       id: 2,
-      img: "https://miro.medium.com/v2/resize:fit:1026/1*maGZm-lKWnn1uPRYec2RRw.jpeg",
-      title: "Mongodb VS Firebase",
+      img: "https://example.com/image2.jpg",
+      title: "Client Success Story: Transforming Businesses with Technology",
       summary:
-        "A comparison between MongoDB and Firebase to help you choose the right database for your application.",
+        "Learn how our solutions have driven real transformation and success for businesses like yours.",
     },
     {
       id: 3,
-      img: "https://mayuresh-khole-profile.web.app/static/media/img.38b1ad74283199dded1c.jpeg",
-      title: "My Journey from Non-tech to Tech",
+      img: "https://example.com/image3.jpg",
+      title: "Cybersecurity Trends 2024: Protecting Your Business in the Digital Age",
       summary:
-        "This journey, filled with continuous learning and real-world application, has been incredibly rewarding.",
+        "Stay informed about the latest cybersecurity threats and strategies to safeguard your business.",
     },
     {
       id: 4,
-      img: "https://aimdek-s3-uploads.s3.ap-south-1.amazonaws.com/wp-content/uploads/2022/08/MicrosoftTeams-image-2.png",
-      title: "React Vs Angular",
+      img: "https://example.com/image4.jpg",
+      title: "Future of AI in Business: Harnessing AI for Competitive Advantage",
       summary:
-        "A detailed comparision between React and Angular to help you take the right choice for your application. ",
-    },
-    {
-      id: 5,
-      img: "https://themesberg.s3.us-east-2.amazonaws.com/public/posts/tailwind-css-vs-bootstrap.jpg",
-      title: "Tailwind CSS vs. Bootstrap: Which CSS Framework is Right for You?",
-      summary:
-        "A detailed comparison of Tailwind CSS and Bootstrap to help you decide which CSS framework best suits your project.",
-    },
-    {
-      id: 6,
-      img: "https://themewagon.com/wp-content/uploads/2022/08/Frame-3736-2.png",
-      title: "Mastering CSS Grid and Flexbox for Responsive Web Design",
-      summary:
-        "Understanding and mastering CSS Grid and Flexbox to create flexible and responsive web designs.",
+        "Explore how AI is reshaping industries and learn how your business can leverage AI technologies.",
     },
   ];
 
   return (
     <BlogContainer id="blogs">
       <BlogWrapper>
-        <BlogTitle>Blogs</BlogTitle>
+        <BlogTitle>Startup Blogs</BlogTitle>
         <Desc>
-          Feel free to checkout my blogs! Browse through for interesting reads.
-          Stay updated with the latest insights!
+          Explore our startup's insights and stay updated with the latest trends and solutions in IT services.
         </Desc>
+        <br />
         <CardContainer>
           {posts.map((post) => (
             <BlogCard key={post.id}>

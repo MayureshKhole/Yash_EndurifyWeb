@@ -1,109 +1,54 @@
-import React from 'react'
-import styled from 'styled-components'
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-import { education, experiences } from '../../data/constants';
-import EducationCard from '../Cards/EducationCard';
+import React from 'react';
+import styled from 'styled-components';
+import { services } from '../../data/constants'; // Assuming services data is imported correctly
+import ServiceCard from '../Cards/ServiceCard';
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
-    z-index: 1;
     align-items: center;
-    padding: 0px 0px 60px 0px;
-    @media (max-width: 960px) {
-        padding: 0px;
-    }
+    padding: 60px 0;
 `;
 
 const Wrapper = styled.div`
-    position: relative;
-    padding-top:4rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
     width: 100%;
-    max-width: 1350px;
-    padding: 40px 0px 0px 0px;
-    gap: 12px;
-    @media (max-width: 960px) {
-        flex-direction: column;
-    }
+    padding: 0 20px;
 `;
 
-const Title = styled.div`
-font-size: 42px;
-text-align: center;
-font-weight: 600;
-margin-top: 3rem;
-  color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
-      margin-top: 12px;
-      font-size: 32px;
-  }
-`;
-
-const Desc = styled.div`
-    font-size: 18px;
+const Title = styled.h2`
+    font-size: 42px;
+    font-weight: 600;
+    color: ${({ theme }) => theme.text_primary};
+    margin-bottom: 20px;
     text-align: center;
-    max-width: 600px;
-    color: ${({ theme }) => theme.text_secondary};
-    @media (max-width: 768px) {
-        margin-top: 12px;
-        font-size: 16px;
-    }
 `;
 
-const TimelineSection = styled.div`
+const ServicesGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     width: 100%;
-    max-width: 1000px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    @media (max-width: 660px) {
-        align-items: center;
-    }
+    margin-top: 40px;
 `;
 
-
-
-const index = () => {
+const Services = () => {
     return (
-        <Container id="education">
+        <Container id="services">
             <Wrapper>
-                <Title>Services</Title>
-                <Desc>
-                    My education has been a journey of self-discovery and growth. My educational details are as follows.
-                </Desc>
-                <TimelineSection>
-                    <Timeline>
-                        {education.map((education,index) => (
-                            <TimelineItem >
-                                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <EducationCard education={education}/>
-                                </TimelineContent>
-                                <TimelineSeparator>
-                                    <TimelineDot variant="outlined" color="secondary" />
-                                    {index !== experiences.length  && <TimelineConnector style={{ background: '#854CE6' }} />}
-                                </TimelineSeparator>
-                            </TimelineItem>
-                        ))}
-                    </Timeline>
-
-                </TimelineSection>
+                <Title>Our Services</Title>
+                <ServicesGrid>
+                    {services.map((service, index) => (
+                        <ServiceCard key={index} service={service} />
+                    ))}
+                </ServicesGrid>
             </Wrapper>
         </Container>
-    )
-}
+    );
+};
 
-export default index
+export default Services;

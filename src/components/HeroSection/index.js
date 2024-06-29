@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Imgh from "./img.jpeg"
+import bgImage from "./background.jpg"; // New background image
+import startupImage from "./startp.png"; // New right corner image
 
 import HeroBgAnimation from "../HeroBgAnimation";
 import {
@@ -25,22 +26,19 @@ import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import GitHub from "@mui/icons-material/GitHub";
 import "./index.css";
-import { ImagesearchRollerOutlined } from "@mui/icons-material";
 
 const HeroSection = () => {
   const SocialMediaIcons = styled.div`
     display: flex;
-
-    align-items: center; // Ensure items are aligned vertically in the center
-    justify-content: center; // Center the buttons horizontally
+    align-items: center;
+    justify-content: center;
   `;
 
   const SocialMediaIcon = styled.a`
     display: inline-block;
     margin: 0 1rem;
-
-    align-items: center; // Ensure items are aligned vertically in the center
-    justify-content: center; // Center the buttons horizontally
+    align-items: center;
+    justify-content: center;
     font-size: 1.5rem;
     color: ${({ theme }) => theme.text_primary};
     transition: color 0.2s ease-in-out;
@@ -60,26 +58,26 @@ const HeroSection = () => {
     <div id="about">
       <HeroContainer>
         <HeroBg>
+          <img src={bgImage} alt="Background" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", zIndex: -1 }} />
           <HeroBgAnimation />
         </HeroBg>
         <HeroInnerContainer>
           <HeroLeftContainer id="Left">
             <Title>
-              Hi, I am <br /> {Bio.name}
+              Welcome to <br /> {Bio.companyName}
             </Title>
             <TextLoop>
-              I am a
               <Span>
                 <Typewriter
                   options={{
-                    strings: Bio.roles,
+                    strings: Bio.services,
                     autoStart: true,
                     loop: true,
                   }}
                 />
               </Span>
             </TextLoop>
-            <SubTitle>{Bio.description}</SubTitle>
+            <SubTitle>{Bio.tagline}</SubTitle>
             <SocialMediaIcons>
               <SocialMediaIcon href={Bio.facebook} target="display">
                 <FacebookIcon />
@@ -96,33 +94,24 @@ const HeroSection = () => {
             </SocialMediaIcons>
             <HContainer>
               <Button
-                href={Bio.resume}
+                href={Bio.contactLink}
                 target="display"
                 className="button-outline-primary"
-                style={{
-                  backgroundColor:"#FFC470",}}
               >
-                View Resume
+                Contact Us
               </Button>
-              <a href="#contact">
-                <button
-                  type="button"
-                  className="button-outline-success"
-                  style={{
-                    backgroundColor:"#FFC470",
-                    padding: "2px",
-                    border: "1px solid white",
-                    outline: "1px solid white",
-                  }}
-                >
-                  Hire Me
-                </button>
-              </a>
+              <Button
+                href={Bio.servicesLink}
+                target="display"
+                className="button-outline-success"
+              >
+                Our Services
+              </Button>
             </HContainer>
           </HeroLeftContainer>
 
           <HeroRightContainer id="Right">
-            <Img src={Imgh} />
+            <Img src={startupImage} />
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>

@@ -1,105 +1,85 @@
 import styled from 'styled-components';
-import _default from '../../themes/default';
 
 export const Container = styled.div`
-    background: linear-gradient(343.07deg, rgba(132, 59, 206, 0.06) 5.71%, rgba(132, 59, 206, 0) 64.83%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     z-index: 1;
     align-items: center;
-    clip-path: polygon(0 0, 100% 0, 100% 100%,100% 98%, 0 100%);
+    padding: 20px 0px 100px 0px;
+    @media (max-width: 960px) {
+        padding: 0px;
+    }
 `;
 
 export const Wrapper = styled.div`
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    max-width: 1350px;
-    padding: 10px 0px 100px 0;
+    padding: 80px 0;
     gap: 12px;
-    @media (max-width: 960px) {
-        flex-direction: column;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scrollbar-width: none; /* Hide scrollbar for a cleaner look */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    &::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
     }
 `;
 
-export const Title = styled.div`
-font-size: 42px;
-text-align: center;
-font-weight: 600;
-margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
-      margin-top: 12px;
-      font-size: 32px;
-  }
+export const Title = styled.h2`
+    font-size: 42px;
+    font-weight: 600;
+    color: ${({ theme }) => theme.text_primary};
+    margin-top: 20px;
+    text-align: center;
+    @media (max-width: 768px) {
+        font-size: 32px;
+        margin-top: 12px;
+    }
 `;
 
-export const Desc = styled.div`
+export const Desc = styled.p`
     font-size: 18px;
     text-align: center;
     max-width: 600px;
     color: ${({ theme }) => theme.text_secondary};
     @media (max-width: 768px) {
-        margin-top: 12px;
         font-size: 16px;
     }
 `;
 
-export const ToggleButtonGroup = styled.div`
-    display: flex;
-    border: 1.5px solid ${({ theme }) => theme.primary};
-    color: ${({ theme }) => theme.primary};
-    font-size: 16px;
-    border-radius: 12px;
-    font-weight: 500;
-    margin: 22px 0px;
-    @media (max-width: 768px) {
-        font-size: 12px;
-    }
-`
-
-export const ToggleButton = styled.div`
-    padding: 8px 18px;
-    border-radius: 6px;
-    cursor: pointer;
-    ${({ active, theme }) =>
-        active && `
-    background: ${theme.primary + 20};
-    `
-    }
-    &:hover {
-        background: ${({ theme }) => theme.primary + 8};
-    }
-    @media (max-width: 768px) {
-        padding: 6px 8px;
-        border-radius: 4px;
-    }
-`
-export const Divider = styled.div`
-    width: 1.5px;
-    background: ${({ theme }) => theme.primary};
-`
-
-
 export const CardContainer = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 38px;
-    flex-wrap: wrap;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 32px;
-    grid-auto-rows: minmax(100px, auto);
-    @media (max-width: 960px) {
-        grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px; /* Add padding for better spacing */
+`;
+
+export const ToggleButtonGroup = styled.div`
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+`;
+
+export const ToggleButton = styled.button`
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: ${({ active, theme }) => (active ? theme.button_active : theme.button)};
+    color: ${({ theme }) => theme.text_primary};
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: ${({ theme }) => theme.button_hover};
     }
-    @media (max-width: 640px) {
-        grid-template-columns: repeat(1, 1fr);
-    }
+`;
+
+export const Divider = styled.div`
+    width: 1px;
+    height: 100%;
+    background-color: ${({ theme }) => theme.divider};
 `;

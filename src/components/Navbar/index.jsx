@@ -17,7 +17,7 @@ const Navbar = ({ toggleTheme, darkMode }) => {
   };
 
   function MayureshKhole() {
-    return <div>Mayuresh Khole</div>;
+    return <div>Endurify </div>;
   }
 
   return (

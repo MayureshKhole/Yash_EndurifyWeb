@@ -89,12 +89,12 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>Mayuresh Khole</Logo>
+        <Logo>Endurify</Logo>
         <Nav>
           {/* <NavLink href="#about">About</NavLink> */}
-          <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#experience">Experience</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
+          <NavLink href="#products">Products</NavLink>
+          <NavLink href="#testimonials">Testimonials</NavLink>
+          <NavLink href="#aboutus">AboutUS</NavLink>
           <NavLink href="#services">Services</NavLink>
         </Nav>
         <SocialMediaIcons>
