@@ -39,9 +39,10 @@ export const NavLogo = styled(LinkR)`
   }
 `;
 export const Span = styled.div`
-    // padding: 0 4px;
-    font-weight: bold;
-    font-size: 18px;
+  // padding: 0 4px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #504538;
 `;
 export const NavItems = styled.ul`
     width: 100%;
