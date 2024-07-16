@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import bgImage from "./background.jpg"; // New background image
-import startupImage from "./startp.png"; // New right corner image
+import startupImage from "../../images/Startup life-pana.svg"; // New right corner image
 
 import HeroBgAnimation from "../HeroBgAnimation";
 import {
