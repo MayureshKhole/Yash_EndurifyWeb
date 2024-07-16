@@ -20,8 +20,9 @@ export const Title = styled.h1`
 
 export const Desc = styled.p`
   font-size: 1.125rem;
-  line-height: 1.5;
+  line-height: 2;
   margin-bottom: 20px;
+  text-align: justify;
 `;
 
 export const CardContainer = styled.div`

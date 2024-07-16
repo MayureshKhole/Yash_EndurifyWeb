@@ -17,9 +17,12 @@ const AboutUsImage = styled.img`
 
 const AboutUsContent = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
+  gap: 2em;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const AboutUs = ({ openModal, setOpenModal }) => {
@@ -28,11 +31,11 @@ const AboutUs = ({ openModal, setOpenModal }) => {
   return (
     <AboutUsContainer id="about">
       <Wrapper>
+        <center><Title>About Us</Title></center>
         <AboutUsContent>
-          <Title>About Us</Title>
           <AboutUsImage src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fit=crop&w=600&q=80" alt="About Us Image" />
           <Desc>
-            We are a dedicated team passionate about delivering innovative IT solutions. Our expertise spans across web development, mobile app development, cloud computing, and more. Our mission is to provide top-notch services that drive success for our clients.
+            We are a dedicated team passionate about delivering innovative IT solutions. Our expertise spans across web development, mobile app development, cloud computing, and more. Our mission is to provide top-notch services that drive success for our clients. We become an extension of your team, working collaboratively to transform your ideas into enduring digital experiences.
           </Desc>
         </AboutUsContent>
         <ToggleButtonGroup>
