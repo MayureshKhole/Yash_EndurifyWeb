@@ -129,18 +129,20 @@ export const GitHubButton = styled.a`
 
 
 export const ButtonContainer = styled.div`
-  width: 80%;  
+  width: 80%;
   height: 100%;
   gap: 2rem;
   display: flex;
   justify-content: end;
   align-items: center;
   padding: 0 6px;
+  // background-color: red;
 
   @media screen and (max-width: 768px) {
     width: 100%; // Adjust width for smaller screens
     gap: 1rem; // Reduce gap
-    justify-content: center; // Center the button on smaller screens
+    margin-right: 2.5em;
+    margin-top: 0.1em;
   }
 `;
 
