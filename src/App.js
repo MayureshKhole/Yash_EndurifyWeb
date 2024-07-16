@@ -46,14 +46,14 @@ function App() {
         <Routes>
           <Route path="/" element={<>
             <HeroSection />
-            <Wrapper>
-              <Products />
-              <Testimonials />
-            </Wrapper>
             <AboutUs />
             <Wrapper>
+              <Products />
               <Services />
+            </Wrapper>
+            <Wrapper>
               <Blogs />
+              <Testimonials />
               <Contact />
             </Wrapper>
             <Footer />
