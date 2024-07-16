@@ -1,7 +1,8 @@
 export const Bio = {
-  companyName: "Tech Innovators Inc.",
-  services: ["Web Development", "Mobile App Development", "Cloud Solutions", "AI Integration"],
-  tagline: "Innovating the Future of Technology",
+  companyName: "Endurify",
+  services: ["Web Development", "Mobile App Development"],
+  // , "Cloud Solutions", "AI Integration"
+  tagline: "Endurify helps you develop powerful web and mobile applications.",
   facebook: "https://www.facebook.com/techinnovators",
   linkedin: "https://www.linkedin.com/in/mayuresh-khole/",
   github: "https://github.com/MayureshKhole",
