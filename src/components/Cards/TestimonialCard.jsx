@@ -30,10 +30,10 @@ const Quote = styled.p`
 
 const TestimonialCard = ({ testimonial }) => {
     return (
-        <CardContainer>
-            <Quote>"{testimonial.quote}"</Quote>
-            <ClientName>- {testimonial.clientName}</ClientName>
-        </CardContainer>
+      <CardContainer>
+        <Quote>"{testimonial.quote}"</Quote>
+        <ClientName>- {testimonial.clientName}</ClientName>
+      </CardContainer>
     );
 };
 

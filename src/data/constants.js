@@ -37,7 +37,7 @@ export const testimonials = [
   },
   {
       quote: "Their expertise and dedication transformed our project. Highly recommend!",
-      clientName: "Jane Smith",
+      clientName: "Mayuresh Khole",
   },
   // Add more testimonials as needed
 ];
