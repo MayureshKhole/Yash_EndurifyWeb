@@ -38,30 +38,7 @@ const AboutUs = ({ openModal, setOpenModal }) => {
             We are a dedicated team passionate about delivering innovative IT solutions. Our expertise spans across web development, mobile app development, cloud computing, and more. Our mission is to provide top-notch services that drive success for our clients. We become an extension of your team, working collaboratively to transform your ideas into enduring digital experiences.
           </Desc>
         </AboutUsContent>
-        <ToggleButtonGroup>
-          <ToggleButton active={toggle === 'all'} onClick={() => setToggle('all')}>
-            All
-          </ToggleButton>
-          <Divider />
-          <ToggleButton active={toggle === 'web app'} onClick={() => setToggle('web app')}>
-            Web Apps
-          </ToggleButton>
-          <Divider />
-          <ToggleButton active={toggle === 'android app'} onClick={() => setToggle('android app')}>
-            React Native Apps
-          </ToggleButton>
-        </ToggleButtonGroup>
-        <CardContainer>
-          {toggle === 'all' &&
-            projects.map((project) => (
-              <ProjectCard key={project.id} project={project} openModal={openModal} setOpenModal={setOpenModal} />
-            ))}
-          {projects
-            .filter((item) => item.category === toggle)
-            .map((project) => (
-              <ProjectCard key={project.id} project={project} openModal={openModal} setOpenModal={setOpenModal} />
-            ))}
-        </CardContainer>
+        
       </Wrapper>
     </AboutUsContainer>
   );

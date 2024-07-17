@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { products } from '../../data/constants';
+// import { CardContainer, ToggleButtonGroup, ToggleButton, Divider } from '../AboutUs/ProjectsStyle';
+import ProjectCard from "../Cards/ProjectCards"; // Assuming ProjectCard component is correctly imported
+import { projects } from "../../data/constants";
 
 const Container = styled.div`
     display: flex;
@@ -106,15 +109,49 @@ const ProductDescription = styled.div`
     text-align: center;
 `;
 
-const Products = () => {
-    return (
-        <Container id="products">
-            <Wrapper>
-                <Title>Our Products</Title>
-                <Desc>
-                    Explore the range of IT services and products we offer to cater to your business needs.
-                </Desc>
-                <ProductsContainer>
+export const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+`;
+
+export const ToggleButtonGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+`;
+
+export const ToggleButton = styled.button`
+  background-color: ${({ active }) => (active ? "#007BFF" : "#e7e7e7")};
+  color: ${({ active }) => (active ? "#fff" : "#000")};
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: ${({ active }) => (active ? "#0056b3" : "#d4d4d4")};
+  }
+`;
+
+export const Divider = styled.div`
+  width: 1px;
+  background-color: #ccc;
+  margin: 0 10px;
+`;
+
+
+const Products = ({ openModal, setOpenModal }) => {
+  const [toggle, setToggle] = useState("all");
+  return (
+    <Container id="products">
+      <Wrapper>
+        <Title>Our Products</Title>
+        <Desc>
+          Explore the range of IT services and products we offer to cater to
+          your business needs.
+        </Desc>
+        {/* <ProductsContainer>
                     {products.map((product) => (
                         <Product key={product.title}>
                             <ProductImage src={product.image} alt={product.title} />
@@ -124,10 +161,53 @@ const Products = () => {
                             </ProductContent>
                         </Product>
                     ))}
-                </ProductsContainer>
-            </Wrapper>
-        </Container>
-    );
+                </ProductsContainer> */}
+        <ToggleButtonGroup>
+          <ToggleButton
+            active={toggle === "all"}
+            onClick={() => setToggle("all")}
+          >
+            All
+          </ToggleButton>
+          <Divider />
+          <ToggleButton
+            active={toggle === "web app"}
+            onClick={() => setToggle("web app")}
+          >
+            Web Apps
+          </ToggleButton>
+          <Divider />
+          <ToggleButton
+            active={toggle === "android app"}
+            onClick={() => setToggle("android app")}
+          >
+            React Native Apps
+          </ToggleButton>
+        </ToggleButtonGroup>
+        <CardContainer>
+          {toggle === "all" &&
+            projects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+              />
+            ))}
+          {projects
+            .filter((item) => item.category === toggle)
+            .map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+              />
+            ))}
+        </CardContainer>
+      </Wrapper>
+    </Container>
+  );
 };
 
 export default Products;

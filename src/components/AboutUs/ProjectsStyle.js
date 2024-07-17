@@ -24,34 +24,3 @@ export const Desc = styled.p`
   margin-bottom: 20px;
   text-align: justify;
 `;
-
-export const CardContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-`;
-
-export const ToggleButtonGroup = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-`;
-
-export const ToggleButton = styled.button`
-  background-color: ${({ active }) => (active ? '#007BFF' : '#e7e7e7')};
-  color: ${({ active }) => (active ? '#fff' : '#000')};
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  &:hover {
-    background-color: ${({ active }) => (active ? '#0056b3' : '#d4d4d4')};
-  }
-`;
-
-export const Divider = styled.div`
-  width: 1px;
-  background-color: #ccc;
-  margin: 0 10px;
-`;
