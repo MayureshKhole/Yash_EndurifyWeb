@@ -87,10 +87,17 @@ export const services = [
 
 
 export const projects = [
+  // {
+  //   id: 1,
+  //   title: "E-commerce Platform",
+  //   description: "A comprehensive e-commerce platform with a seamless user experience.",
+  //   category: "web app",
+  //   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXq-RJdWGH1I6hIuRWZtwtHOfagEuKJTqu1Q&s" // Unsplash image URL
+  // },
   {
     id: 1,
-    title: "E-commerce Platform",
-    description: "A comprehensive e-commerce platform with a seamless user experience.",
+    title: "Lightify",
+    description: "Discover a world of illumination with Lightify. We offer a stunning collection of bulbs and lamps to elevate your space. From cozy ambiance to focused brilliance, find the perfect light for every mood.",
     category: "web app",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXq-RJdWGH1I6hIuRWZtwtHOfagEuKJTqu1Q&s" // Unsplash image URL
   },
