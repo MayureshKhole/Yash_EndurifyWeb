@@ -119,7 +119,7 @@ export const CardContainer = styled.div`
 export const ToggleButtonGroup = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 20px;
 `;
 
 export const ToggleButton = styled.button`
