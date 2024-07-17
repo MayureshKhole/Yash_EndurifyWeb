@@ -52,6 +52,8 @@ const ContactInfoWrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 2rem;
+  width: 80vw;
+  // background-color: red;
 `;
 
 const ContactCard = styled.div`
@@ -173,6 +175,11 @@ const GifContainer = styled.div`
   }
 `;
 
+const ContactFormContainer = styled.div`
+  display: flex;
+  gap: 5em
+`
+
 const Contact = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const formRef = useRef();
@@ -213,17 +220,20 @@ const Contact = () => {
           </ContactCard>
         </ContactInfoWrapper>
         
-        <ContactForm ref={formRef} onSubmit={handleSubmit}>
-          <FormInput type="email" name="from_email" placeholder="Your Email" required />
-          <FormInput type="text" name="from_name" placeholder="Your Name" required />
-          <FormInput type="text" name="subject" placeholder="Subject" required />
-          <FormTextarea name="message" placeholder="Message" rows="4" required />
-          <FormButton type="submit">Send Message</FormButton>
-        </ContactForm>
-        
-        <GifContainer>
-          <img src="https://i.pinimg.com/originals/cd/59/d6/cd59d626dc86397fe45080e6e9c7027d.gif" alt="Contact us" />
-        </GifContainer>
+        <ContactFormContainer>
+          <GifContainer>
+            <img src="https://i.pinimg.com/originals/cd/59/d6/cd59d626dc86397fe45080e6e9c7027d.gif" alt="Contact us" />
+          </GifContainer>
+          
+          <ContactForm ref={formRef} onSubmit={handleSubmit}>
+            <FormInput type="email" name="from_email" placeholder="Your Email" required />
+            <FormInput type="text" name="from_name" placeholder="Your Name" required />
+            <FormInput type="text" name="subject" placeholder="Subject" required />
+            <FormTextarea name="message" placeholder="Message" rows="4" required />
+            <FormButton type="submit">Send Message</FormButton>
+          </ContactForm>
+
+        </ContactFormContainer>
         
         <Snackbar
           open={openSnackbar}
