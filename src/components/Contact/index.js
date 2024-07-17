@@ -177,7 +177,12 @@ const GifContainer = styled.div`
 
 const ContactFormContainer = styled.div`
   display: flex;
-  gap: 5em
+  gap: 5em;
+  margin-bottom: 2em;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const Contact = () => {
