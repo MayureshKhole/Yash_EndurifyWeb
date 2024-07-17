@@ -29,7 +29,7 @@ const AboutUs = ({ openModal, setOpenModal }) => {
   const [toggle, setToggle] = useState('all');
 
   return (
-    <AboutUsContainer id="about">
+    <AboutUsContainer id="aboutus">
       <Wrapper>
         <center><Title>About Us</Title></center>
         <AboutUsContent>

@@ -50,11 +50,11 @@ const Navbar = ({ toggleTheme, darkMode }) => {
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
             {/* <MobileLink href="#about" onClick={() => setIsOpen(!isOpen)}>About</MobileLink> */}
-            <MobileLink href='#products' onClick={() => setIsOpen(!isOpen)}>Products</MobileLink>
-            <MobileLink href='#testimonials' onClick={() => setIsOpen(!isOpen)}>Testimonials</MobileLink>
             <MobileLink href='#aboutus' onClick={() => setIsOpen(!isOpen)}>AboutUs</MobileLink>
+            <MobileLink href='#products' onClick={() => setIsOpen(!isOpen)}>Products</MobileLink>
             <MobileLink href='#services' onClick={() => setIsOpen(!isOpen)}>Services</MobileLink>
             <MobileLink href='#blogs' onClick={() => setIsOpen(!isOpen)}>Blogs</MobileLink>
+            <MobileLink href='#testimonials' onClick={() => setIsOpen(!isOpen)}>Testimonials</MobileLink>
             {/* <GitHubButton style={{padding: '10px 16px',background: `${theme.primary}`, color: 'white',width: 'max-content'}} href={Bio.github} target="_blank">Github Profile</GitHubButton> */}
           </MobileMenu>
         )}
