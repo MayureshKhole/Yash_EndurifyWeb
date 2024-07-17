@@ -92,10 +92,10 @@ function Footer() {
         <Logo>Endurify</Logo>
         <Nav>
           {/* <NavLink href="#about">About</NavLink> */}
-          <NavLink href="#products">Products</NavLink>
-          <NavLink href="#testimonials">Testimonials</NavLink>
           <NavLink href="#aboutus">AboutUS</NavLink>
+          <NavLink href="#products">Products</NavLink>
           <NavLink href="#services">Services</NavLink>
+          <NavLink href="#testimonials">Testimonials</NavLink>
         </Nav>
         <SocialMediaIcons>
           <SocialMediaIcon href={Bio.facebook} target="display"><FacebookIcon /></SocialMediaIcon>
